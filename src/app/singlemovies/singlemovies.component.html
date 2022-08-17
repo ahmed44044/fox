@@ -1,0 +1,16 @@
+<div *ngIf=" moviedetails !==undefined" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+            <img class="img-fluid" [src]="imgPath+moviedetails.poster_path "alt="">
+        </div>
+        </div>
+        <div class="col-md-8">
+            <div>
+            <h2>{{ moviedetails.title}}</h2>
+            <p>{{ moviedetails.overview}}</p>
+            <p class="">{{moviedetails.vote_average}}</p>
+        </div>
+        </div>
+    </div>
+</div>

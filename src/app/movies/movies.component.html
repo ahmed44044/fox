@@ -1,0 +1,22 @@
+<div class="container">
+     
+    <div class="p-3">
+        <input type="text" [(ngModel)]="term" class="form-control bg-black text-white" placeholder="search by name">
+    </div>
+    <div class="row justify-content-center   ">
+        <div class="col-md-4 ">
+            <h1>Now Playing Movies
+                <br>
+            to Watched </h1>
+            <p>most Watched movies by days</p>
+        </div>
+        <div *ngFor="let movies of  moviesContainer|search:term" class="col-md-2">
+            <div class="">
+                <img [routerLink]="['/singlemovies', movies.id , movies.title]" class="img-fluid" [src]="imgPath+movies.poster_path" alt="">
+                <p>{{movies.id}}</p>
+                <p>{{movies.title}}</p>
+
+            </div>
+        </div>
+    </div>
+</div> 

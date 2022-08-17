@@ -1,0 +1,66 @@
+   <div class="container">
+    <h1>  registeration form</h1>
+    <h4 class="text-danger" >{{apidata}}</h4>
+    <form [formGroup]=" registerationForm" (ngSubmit)="sendData(registerationForm)" >
+    <label for="">first_name</label>
+
+    <input formControlName="first_name" class="form-control my-3">
+        <p *ngIf="registerationForm.controls['first_name']?.errors?.['required'] && registerationForm.controls['first_name']?.touched "
+        class="text-danger">please fill this fieled</p>
+
+        <p *ngIf="registerationForm.controls['first_name']?.errors?.['minlength'] && registerationForm.controls['first_name']?.touched " 
+        class="text-danger">first name must be at least 3 chars</p>
+
+        <p *ngIf="registerationForm.controls['first_name']?.errors?.['maxlength'] && registerationForm.controls['first_name']?.touched " 
+        class="text-danger">first name must be 10 chars</p>
+    <label for="">last_name</label>
+
+    <input formControlName="last_name" class="form-control my-3">
+    <p *ngIf="registerationForm.controls['last_name']?.errors?.['required'] && registerationForm.controls['last_name']?.touched "
+    class="text-danger">please fill this fieled</p>
+
+    <p *ngIf="registerationForm.controls['last_name']?.errors?.['minlength'] && registerationForm.controls['last_name']?.touched " 
+    class="text-danger">last name must be at least 3 chars</p>
+
+    <p *ngIf="registerationForm.controls['last_name']?.errors?.['maxlength'] && registerationForm.controls['last_name']?.touched " 
+    class="text-danger">last name must be 10 chars</p>
+
+    <label for="">age</label>
+  
+    <input formControlName="age" class="form-control my-3">
+    <p *ngIf="registerationForm.controls['age']?.errors?.['required'] && registerationForm.controls['age']?.touched "
+    class="text-danger">please fill this fieled</p>
+
+    <p *ngIf="registerationForm.controls['age']?.errors?.['min'] && registerationForm.controls['age']?.touched " 
+    class="text-danger">your age must be greater than 15 </p>
+
+    <p *ngIf="registerationForm.controls['age']?.errors?.['max'] && registerationForm.controls['age']?.touched " 
+    class="text-danger">your age must be 100 </p>
+
+    <label for="">email</label>
+
+    <input formControlName="email" class="form-control my-3">
+    <p *ngIf="registerationForm.controls['email']?.errors?.['required'] && registerationForm.controls['email']?.touched "
+    class="text-danger">please fill this fieled</p>
+
+    <p *ngIf="registerationForm.controls['email']?.errors?.['email'] && registerationForm.controls['email']?.touched " 
+    class="text-danger">your email must be write by method 'AhmedMAhmoud112@gmail.com'</p>
+
+
+    <label for="">password</label>
+
+    <input formControlName="password" class="form-control my-3">
+    <p *ngIf="registerationForm.controls['password']?.errors?.['required'] && registerationForm.controls['password']?.touched "
+    class="text-danger">please fill this fieled</p>
+
+    <p *ngIf="registerationForm.controls['password']?.errors?.['minlength'] && registerationForm.controls['password']?.touched " 
+    class="text-danger">password name must be at least 3</p>
+
+    <p *ngIf="registerationForm.controls['password']?.errors?.['maxlength'] && registerationForm.controls['password']?.touched " 
+    class="text-danger">password name must be 12</p>
+    <p *ngIf="registerationForm.controls['password']?.errors?.['pattern'] && registerationForm.controls['password']?.touched " 
+    class="text-danger">password must be start with a number from 0 to 9 </p>
+
+    <button  class="btn btn-info">register</button>
+</form>
+   </div>
