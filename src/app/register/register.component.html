@@ -39,7 +39,7 @@
 
     <label for="">email</label>
 
-    <input formControlName="email" class="form-control my-3">
+    <input type="email" formControlName="email" class="form-control my-3">
     <p *ngIf="registerationForm.controls['email']?.errors?.['required'] && registerationForm.controls['email']?.touched "
     class="text-danger">please fill this fieled</p>
 
